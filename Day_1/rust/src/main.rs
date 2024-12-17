@@ -5,8 +5,7 @@ use std::path::Path;
 
 fn main() {
     let (v1, v2) = get_sorted_vectors("./../input");
-    let distance: i32 = compute_distance(v1, v2);
-
+    let distance: i32 = compute_distance(&v1, &v2);
     println!("The answer is : {}", distance);
 }
 
@@ -33,7 +32,7 @@ fn get_sorted_vectors(file_path: &str) -> (Vec<i32>, Vec<i32>) {
     (column1, column2)
 }
 
-fn compute_distance(sorted_v1: Vec<i32>, sorted_v2: Vec<i32>) -> i32 {
+fn compute_distance(sorted_v1: &[i32], sorted_v2: &[i32]) -> i32 {
     sorted_v1
         .iter()
         .zip(sorted_v2)

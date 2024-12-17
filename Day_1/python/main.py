@@ -19,7 +19,5 @@ def compute_distance(v1, v2):
 
 
 v1, v2 = get_sorted_vectors("./../input")
-
 distance = compute_distance(v1, v2)
-
 print(f"The answer is : {distance}")
