@@ -11,8 +11,6 @@ fn get_sorted_vectors<P: AsRef<Path>>(file_path: P) -> io::Result<(Vec<i32>, Vec
     let vec_of_2tuples: Vec<_> = 
         // try and read lines. return fn w/ error if needed
         read_lines(file_path)?
-            // consume iterator into FromIterator
-            .into_iter()
             // keep going until error, if one. unwraps string inside of Ok until doing so
             .scan((), |_, s| s.ok())
             // parse line. expect parse to succeed reading i32's twice
